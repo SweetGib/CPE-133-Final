@@ -1,0 +1,40 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: Jake Garrett
+// 
+// Create Date: 06/05/2024 09:30:34 PM
+// Design Name: 
+// Module Name: Memory
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module Memory(
+input logic clk,
+input logic enter,
+input logic clr,
+input logic [3:0] D,
+output logic [3:0] Q
+);
+
+//logic [3:0] D;
+always_ff @ (posedge clk)
+    begin
+         if(clr)
+            Q <= 0;
+             else if(enter)
+            Q <= D;
+            
+   end
+endmodule
