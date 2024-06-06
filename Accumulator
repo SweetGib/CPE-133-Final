@@ -1,0 +1,26 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer: Bridget Benson, Jake Garrett
+// Create Date: 10/26/2018 12:57:18 PM
+// Description: 8 bit acculumator.  Adds new value to the
+// current value when LD is 1.  
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module Accumulator(
+    input clk, LD, CLR,
+    input [3:0] Guesses,
+    output logic LED,
+    output logic Count
+    );
+    
+    always_ff @ (posedge clk)
+    begin
+        if (CLR)
+            LED <= 0;
+        else if (Guesses)
+            LED <= LED + 1;
+        else if (Count)
+            Count <= LED + 1;
+         
+    
+    end
